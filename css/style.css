@@ -2,13 +2,45 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif; }
+  font-family: 'Roboto', sans-serif; }
 
 a {
   text-decoration: none;
-  color: black; }
+  color: black;
+  font-weight: 500; }
 
 ul {
   list-style-type: none; }
+
+body {
+  max-width: 1280px;
+  margin: 0px auto; }
+
+header {
+  height: 90px;
+  background-color: #f3e9f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid violet; }
+  header .logo {
+    height: 90px;
+    width: auto; }
+
+.navbar {
+  display: flex;
+  justify-content: space-around; }
+  .navbar a {
+    padding: 20px; }
+    .navbar a:hover {
+      color: violet; }
+
+footer {
+  height: 90px;
+  background-color: #f3e9f1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 2px solid violet; }
 
 /*# sourceMappingURL=style.css.map */
