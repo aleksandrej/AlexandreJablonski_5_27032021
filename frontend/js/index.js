@@ -1,43 +1,55 @@
-//Url initialisation
-let url = 'http://localhost:3000/api/teddies' 
+// import {Test} from '/js/modules/Test.js'
 
-//Products recovery
-fetch(url, {method : 'GET'})
-.then(data => {
-	return data.json()
+// Test.testUn();
 
-//Objects to Json
-}).then(products =>{
-	console.log(products)
+// API INITIALISATION
+let url = "http://localhost:3000/api/teddies";
 
-	//Code replacement variable
-	let HTML = document.getElementById("products")
+console.log(url);
 
-	let myHTML = ""
+//RECUPERATION DES PRODUITS
+fetch(url, { method: "GET" })
+  .then((data) => {
+    // Utilisation d'une expression de fonction fléchée (arrow function en anglais) pour avoir une syntaxe plus courte
+    return data.json();
 
-	//Add products
-	products.forEach(product =>{
-		console.log(product.name)
-		console.log(product.price)
+    //OBJETS EN JSON
+  })
+  .then((products) => {
+    console.log(products);
 
-		//Price modification
-		let originalPrice = product.price /100
-  		let newPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(originalPrice)
+    //INITIALISATION HTML
+    let HTML = document.getElementById("products");
 
-		//HTML modification
-		myHTML += `<figure>
+    let myHTML = "";
+
+    //AJOUT PRODUITS
+    products.forEach((product) => {
+      console.log(product.name);
+      console.log(product.price);
+
+      //INITIALISATION PRIX
+      let productPrice = product.price / 100;
+      //   Division par 100 pour avoir un prix realiste
+
+      let newPrice = new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+      });
+      //
+
+      //HTML 
+      myHTML += `<figure>
 						<img src="${product.imageUrl}" alt="${product.name}">
 						<figcaption>
 							<h2>${product.name}</h2>
 							<p>${newPrice}</p>
-							<a href="product.html?given_id=${product._id}">Voir le produit</a>
+							<a href="frontend/pages/products.html?given_id=${product._id}">Détails</a>
 						</figcaption>
-					</figure>`
-	}) 
+					</figure>`;
+    });
 
-	console.log(myHTML)
-	HTML.innerHTML = myHTML
-})
-.catch(function(error) {
-  alert('Ressource non trouvée')
-})
+    console.log(myHTML);
+    HTML.innerHTML = myHTML;
+  })
+
