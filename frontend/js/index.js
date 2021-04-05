@@ -32,18 +32,19 @@ fetch(url, { method: "GET" })
       let productPrice = product.price / 100;
       //   Division par 100 pour avoir un prix realiste
 
-      let newPrice = new Intl.NumberFormat("fr-FR", {
+      //FORMATAGE DU PRIX AVEC MISE AU NORME EURO
+      let euroPrice = new Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
-      });
+      }).format(productPrice);
       //
 
-      //HTML 
+      //HTML
       myHTML += `<figure>
 						<img src="${product.imageUrl}" alt="${product.name}">
 						<figcaption>
 							<h2>${product.name}</h2>
-							<p>${newPrice}</p>
+							<p>${euroPrice}</p>
 							<a href="frontend/pages/products.html?given_id=${product._id}">Détails</a>
 						</figcaption>
 					</figure>`;
@@ -51,5 +52,4 @@ fetch(url, { method: "GET" })
 
     console.log(myHTML);
     HTML.innerHTML = myHTML;
-  })
-
+  });
