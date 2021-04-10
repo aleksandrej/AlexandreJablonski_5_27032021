@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap"
-        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cf88953d74.js" crossorigin="anonymous"></script>
     <title>Orinoco | Nos produits</title>
 </head>
+
 <body>
 
-     <!-- HEADER STARD -->
-     <header>
+    <!-- HEADER STARD -->
+    <header>
         <a href="/index.html" class="logo_link"><img class="logo" src="/backend/images/Orinoco.png"
                 alt="logo Orinoco"></a>
         <nav class="navbar">
@@ -30,17 +29,41 @@
 
     <!-- MAIN STARD -->
 
-    <main id="detail">
+    <main id="product_detail">
 
         <!-- JAVASRIPT -->
 
+        <h2 id="titleProduct"></h2>
+        <p id="descriptionProduct"></p>
+        <p id="priceProduct"></p>
+        <div>
+            <img src="" alt="image de l'ourson" id="imgProduct" width="350" height="250">
+        </div>
+        <div>
+            <div>
+                <label>Couleurs :</label>
+                <select id="dropDownList"></select>
+            </div>
+            <button type="button" id="addCart">Adopte moi</button>
+        </div>
+
+
+
     </main>
 
+
+
+
     <!-- MAIN END -->
-    
-    
+
+    <!-- FOOTER -->
+
+    <footer>
+
+    </footer>
 
     <!-- JS -->
     <script src="/frontend/js/product.js" type="text/javascript"></script>
 </body>
+
 </html>

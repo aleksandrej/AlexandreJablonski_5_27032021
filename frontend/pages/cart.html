@@ -1,33 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap"
-        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cf88953d74.js" crossorigin="anonymous"></script>
     <title>Orinoco | Votre panier</title>
 </head>
+
 <body>
     <!-- HEADER STARD -->
     <header>
-        <a href="index.html" class="logo_link"><img class="logo" src="/backend/images/Orinoco.png"
+        <a href="/index.html" class="logo_link"><img class="logo" src="/backend/images/Orinoco.png"
                 alt="logo Orinoco"></a>
         <nav class="navbar">
             <a href="/index.html" class="link">Accueil</a>
-            <a href="./frontend/pages/cart.html" class="link"><i class="fas fa-shopping-cart"></i>Panier</a>
+            <a href="/frontend/pages/cart.html" class="link"><i class="fas fa-shopping-cart"></i>Panier</a>
         </nav>
     </header>
     <!-- HEADER END -->
-    
 
+    <!-- RECAP PRODUCTS START -->
+    <main id="cart_recap">
+        <div class="cart_recap--detail">
+            <h3>Vos articles :</h3>
+            <div>
+                <!-- <div class="col-12">   -->
+                <ul id="basketList"></ul>
+                <!-- </div> -->
+            </div>
+            <div>
+                <div class="cart_total">
+                    <h3>Prix total :</h3>
+                    <p id="total">0€</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- RECAP PRODUCTS END -->
+
+        <!--CONTACT FORM START-->
+        <section class="cart_form">
+            <div>
+                <div>
+                    <h2>Veuillez de completer le formulaire ci-dessous :
+                    </h2>
+                    <div id="form">
+                        <div>
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" placeholder="  Votre nom">
+                            <span class="missingField" id="missingLastName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="  Votre prénom">
+                            <span class="missingField" id="missingFirstName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="text" id="email" name="email" placeholder="  nom@exemple.com">
+                            <span class="missingField" id="missingEmail"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse">Adresse :</label>
+                            <input type="text" id="adresse" name="adresse" placeholder="  Votre adresse">
+                            <span class="missingField" id="missingAddress"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="ville">Ville :</label>
+                            <input type="text" id="ville" name="ville" placeholder="  Votre ville">
+                            <span class="missingField" id="missingCity"></span>
+                        </div>
+                        <div class="">
+                            <button id="validationButton">Passer la commande</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--CONTACT FORM START END-->
+
+    </main>
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
     <!-- JS -->
-    <script src="js/cart.js" type="text/javascript"></script>
+    <script src="/frontend/js/cart.js" type="text/javascript"></script>
 </body>
+
 </html>
