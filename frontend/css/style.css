@@ -189,9 +189,8 @@ figure img {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.cart_recap--detail h3{
+.cart_recap--detail h3 {
   font-size: 2em;
-
 }
 
 #cart_recap img {
@@ -205,7 +204,6 @@ figure img {
   width: 50%;
   margin: 0 auto;
 }
-
 
 .list {
   width: 100%;
@@ -222,7 +220,6 @@ figure img {
 .cart_total {
   display: flex;
   justify-content: space-around;
-  
   align-items: center;
 }
 
@@ -230,8 +227,8 @@ figure img {
   font-size: 1.6em;
 }
 
-
 /* FORM */
+
 .cart_form {
   width: 50%;
   background-color: lightgray;
@@ -239,7 +236,6 @@ figure img {
   padding: 30px 10px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
 }
 
 .cart_form h2 {
@@ -298,7 +294,6 @@ figure img {
 
 .confirmationContainer {
   height: 100vh;
-
 }
 
 #orderContainer {
@@ -310,15 +305,11 @@ figure img {
   border: 0px lightgray;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
 }
 
 #orderContainer h2, p {
   margin: 20px 0px;
 }
-
-
-
 
 /* FOOTER */
 
@@ -332,4 +323,70 @@ footer {
   justify-content: space-around;
   border-radius: 20px 20px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/* RESPONSIVE SMARTPHONE */
+
+@media all and (max-width: 767px) {
+  #teddies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ourProducts {
+    font-size: 1.5em;
+  }
+  .figure {
+    max-width: 90%;
+    width: 90%;
+  }
+  .figcaption {
+    padding: 2px;
+  }
+  .figcaption h2 {
+    margin: 20px;
+  }
+  #product_detail {
+    width: 90%;
+  }
+  .accueil {
+    display: none;
+  }
+  .cart_recap--detail {
+    width: 90%;
+  }
+  .list {
+    display: block;
+    font-size: 1.5em;
+  }
+
+  .emptyBasket {
+    font-size: 1.5em;
+  }
+
+  #total {
+    font-size: 1.9em;
+  }
+  .cart_form {
+    width: 90%;
+  }
+
+  #form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart_form input {
+    width: 100%;
+  }
+
+  #orderContainer {
+    max-width: 90%;
+    font-size: 1.5em;
+    margin: 15% auto;
+  }
+  .confirmationContainer {
+    height: auto;
+  }
+
 }
