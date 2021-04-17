@@ -1,8 +1,8 @@
-// *****************    Afficher le contenu du panier    *****************
+// RECUPERATION PANIER
 
 const basket = JSON.parse(localStorage.getItem("basketContent"));
 const basketList = document.getElementById("basketList");
-if (basket == null){
+if (basket == null || basket.length == 0){
     alert("Votre panier est vide.");
     let emptyBasket = document.createElement("p");
     emptyBasket.innerHTML = "Votre panier est vide."
@@ -36,12 +36,14 @@ if (basket == null){
         deleteButton.innerHTML = "Supprimer";
         deleteButton.classList.add("deleteButton");
         list.appendChild(deleteButton);
-        console.log("basket");
+        
     
     }
 }
 
-// *****************    fonctionnement du bouton supprimer   *****************
+console.log(basket);
+
+// SUPPRIMER ET MISE A JOUR DU PANIER
 
 const deleteButton = document.querySelectorAll(".deleteButton");
 const liste = document.getElementsByTagName("li");
@@ -57,12 +59,13 @@ const liste = document.getElementsByTagName("li");
             //Remplacement de l'ancien "basketContent" par "basketContent" - l'élément supprimé, dans le localStorage
             window.localStorage.setItem("basketContent", JSON.stringify(basket));
             totalPrice(basket); // Recalcul du prix total après suppression
+            document.location.reload();
         });
     }
  }
  
 
-// *****************    Calcul du prix total du panier    *****************
+// TOTAL PANIER
 function totalPrice (basket){
     let basketSum = 0;
     const totalPrice = document.getElementById("total");
@@ -81,7 +84,7 @@ function totalPrice (basket){
 totalPrice(basket);
 
     
-// *****************    Vérifier les champs du formulaire    *****************
+// VERIFICATION DU FORMULAIRE
 
 const form = document.getElementById("form");
 const formValid = document.getElementById("validationButton");
@@ -165,14 +168,16 @@ function validation () {
     }
     return orderValid;
 }
+
+
    
 
-// *****************    Validation du formulaire  *****************
+// ENVOI DU FORMULAIRE
  formValid.addEventListener("click", function(){
     let funcValidation = validation();
 
     if(funcValidation == true) {
-        // *****************    Créations des éléments à envoyer lors de la validation du formulaire   *****************
+        // PARTIE CREER POUR LA PAGE CONFIRMATION
         let products = basket.map(basket => basket.id);
         let data = {
             contact: {
@@ -184,7 +189,7 @@ function validation () {
             },
             products: products
         }
-        // *****************    envoi du panier et de l'objet contact   *****************
+        // ENVOI PANIER ET FORMULAIRE
          fetch("http://localhost:3000/api/teddies/order", {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -196,6 +201,7 @@ function validation () {
             .then(response => {
                 localStorage.setItem("basketData", JSON.stringify(response)); 
                 window.location.href = "confirmation.html";
+                console.log(response);
             })
             .catch((error) => alert("Erreur : " + error))
     }

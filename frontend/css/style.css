@@ -129,7 +129,7 @@ figcaption p {
 
 figure img {
   max-width: 100%;
-  height: 74%;
+  height: 100%;
 }
 
 /* PRODUCTS */
@@ -292,6 +292,29 @@ figure img {
   box-shadow: rgba(23, 23, 43, 0.25) 0px 13px 27px -5px, rgba(78, 75, 75, 0.3) 0px 8px 16px -8px;
   background-color: green;
   color: white;
+}
+
+/* CONFIRMATION */
+
+.confirmationContainer {
+  height: 100vh;
+
+}
+
+#orderContainer {
+  text-align: center;
+  /* height: 50%; */
+  margin: 25% auto;
+  padding: 10px;
+  max-width: 80%;
+  border: 0px lightgray;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+}
+
+#orderContainer h2, p {
+  margin: 20px 0px;
 }
 
 
