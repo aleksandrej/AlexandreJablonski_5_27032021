@@ -37,11 +37,7 @@ function products(data) {
     let price = document.createElement("p");
     price.innerText = data[i].price / 100 + " €";
     figCaption.appendChild(price);
-
-    // let detail = document.createElement("a");
-    // detail.href = "frontend/pages/products.html?id=" + data[i]._id;
-    // detail.innerHTML = "Je t'adopte";
-    // figCaption.appendChild(detail);
+    console.log(card_link);
   }
 }
 
@@ -50,7 +46,7 @@ fetch(url)
   .then((data) => {
     products(data);
     console.log(data);
-  })
+    })
   .catch((error) => alert("Erreur : " + error));
 
 // ANCIENNE VERSION MODIFIEE SUITE POINT AVEC MENTOR LOUIS

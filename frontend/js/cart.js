@@ -201,7 +201,7 @@ function validation () {
             .then(response => {
                 localStorage.setItem("basketData", JSON.stringify(response)); 
                 window.location.href = "confirmation.html";
-                console.log(response);
+               
             })
             .catch((error) => alert("Erreur : " + error))
     }

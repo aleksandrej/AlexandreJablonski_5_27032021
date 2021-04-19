@@ -12,6 +12,8 @@ const id = urlParams.get('id');
 const apiUrlId = `http://localhost:3000/api/teddies/${id}`;
 
 
+console.log(apiUrlId);
+
 
 
 // AFFICHAGE CHOIX OURSON SUIVANT LA PAGE INDEX.HTML
@@ -50,6 +52,7 @@ buttonBasket.addEventListener("click", function (){
 
     addCart(chosenColor);
 });
+console.log(buttonBasket);
 
 
 
@@ -71,4 +74,5 @@ function addCart(chosenColor) {
     alert("Produit ajouté au panier !")
 
     console.log(teddy);
+    console.log(basketContent);
 }
